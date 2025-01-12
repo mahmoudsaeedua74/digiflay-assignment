@@ -1,26 +1,36 @@
+import ReduxProvider from "@/components/ReduxProvider/ReduxProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import ReduxProvider from "@/components/ReduxProvider/ReduxProvider";
+import { Metadata } from "next";
+
+type Locale = (typeof routing.locales)[number];
+
+interface LocaleLayoutProps {
+  children: React.ReactNode;
+  params: { locale: Locale };
+}
+
+export const metadata: Metadata = {
+  title: 'App',
+  description: 'Description'
+};
+
 export default async function LocaleLayout({
   children,
-  params: { locale },
-}: {
-  children: React.ReactNode;
-  params: { locale: string };
-}) {
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  params: { locale }
+}: LocaleLayoutProps) {
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
- 
-  const messages = await getMessages();
+
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           <ReduxProvider>{children}</ReduxProvider>
         </NextIntlClientProvider>
       </body>
