@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import ReduxProvider from "@/components/ReduxProvider/ReduxProvider";
 import { NextIntlClientProvider } from "next-intl";
