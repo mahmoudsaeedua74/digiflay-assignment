@@ -1,0 +1,55 @@
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+.mapContainer {
+    position: relative;
+    flex: 1;
+    height: 647px;
+    border-radius: 2px;
+    overflow: hidden; 
+  }
+  .map {
+    height: 100%;
+    background-color: white;
+    padding-block: 5px;
+    box-shadow: inset 0 0 12px 2px #eee;
+    position: relative;
+  }
+  .foggy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px; 
+  
+    pointer-events: none; 
+  }
+  .foggy.top {
+    top: 0;
+    z-index: 555555555555;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0)
+      );
+  }
+  .foggy.bottom {
+    bottom: 0;
+    z-index: 555555555555;
+    background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0)
+      );
+  }
+.mapMark {
+    background-color: #6D5BBE;
+    width: 312px;
+    border-radius: 8px;
+    color: #eee;
+    box-shadow: 0 4px 20px 0px #6d5bbe;
+    word-wrap: break-word;
+    padding: 10px;
+    border:none;
+}
+.markColor {
+    color: #47BC8A;
+    font-weight: 700;
+}

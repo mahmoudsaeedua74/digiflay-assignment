@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Comfortaa:wght@300..700&family=Electrolize&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lilita+One&family=Nerko+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn {
+    @apply text-xl p-2 px-6 border hover:bg-mainColor hover:text-white
+  }
+
+  .formCheck {
+    @apply bg-gray-50 border border-gray-300 rounded-sm mt-1 focus:border-blue-600 focus:outline-none w-full p-3
+  }
+
+  .formError {
+    @apply mt-2 text-sm text-red-600
+  }
+
+  .formValid {
+    @apply mt-2 text-sm text-mainColor
+  }
+
+  .navLink {
+    @apply px-4 hover:text-mainColor duration-150 transition-colors
+  }
+
+  .tableHead {
+    @apply px-4 py-3 whitespace-nowrap
+  }
+
+  .tableBody {
+    @apply px-4 py-6 
+  }
+}
+body {
+  font-family: "Poppins", serif;
+}
+.leaflet-tooltip-top::before {
+  border-top: 110px solid #6D5BBE !important;
+  bottom: -37.97px !important;
+  z-index: -1 !important;
+  border-left: 30px solid transparent !important;
+  border-right: 90px solid transparent !important;
+  left: 60% !important;
+  transform: translateX(-50%) ;
+}
