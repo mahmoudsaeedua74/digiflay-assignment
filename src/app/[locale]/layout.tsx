@@ -1,39 +1,27 @@
-import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import ReduxProvider from "@/components/ReduxProvider/ReduxProvider";
-import { Toaster } from "react-hot-toast";
-import "../globals.css";
-
-export const metadata: Metadata = {
-  title: "Localized Frontend-Task",
-  description: "Frontend-Task with Localization Support",
-};
-
 export default async function LocaleLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale?: string | Promise<string> };
+  params: { locale: string };
 }) {
-  let resolvedLocale = 'en'; // القيمة الافتراضية
-
-  if (params && 'locale' in params) {
-    resolvedLocale = (params.locale instanceof Promise ? await params.locale : params.locale) ?? 'en';
+  // Ensure that the incoming `locale` is valid
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
   }
-
-  const messages = await getMessages({ locale: resolvedLocale });
-  const direction = resolvedLocale === 'ar' ? 'rtl' : 'ltr';
+ 
+  const messages = await getMessages();
 
   return (
-    <html lang={resolvedLocale} dir={direction}>
+    <html lang={locale}>
       <body>
-        <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
-          <ReduxProvider>
-            {children}
-            <Toaster position="top-right" />
-          </ReduxProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ReduxProvider>{children}</ReduxProvider>
         </NextIntlClientProvider>
       </body>
     </html>
