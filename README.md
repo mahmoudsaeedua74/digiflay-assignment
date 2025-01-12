@@ -73,3 +73,13 @@ Before you begin, ensure you have met the following requirements:
 
 ## Contributing
 We welcome contributions to this project. If you'd like to improve or add new features, please fork the repository, create a branch, and submit a pull request.
+
+
+
+![Screenshot 2025-01-12 220009](https://github.com/user-attachments/assets/53e17774-be6b-40f7-b3be-e85b1543ec4e)
+![Screenshot 2025-01-12 215954](https://github.com/user-attachments/assets/e289cbb6-7f8a-461e-9419-0f1d473a190c)
+![Screenshot 2025-01-10 183859](https://github.com/user-attachments/assets/f7b56a39-c020-4db8-9e7b-75fbd499150f)
+
+
+
+
