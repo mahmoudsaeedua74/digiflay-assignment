@@ -5,6 +5,8 @@
 This project is a **Next.js-based Frontend-Assessment website** with Redux for state management. It includes features like a dynamic navbar, language switching, result tables, and customizable parts for your website content. It is designed to display a wide range of products, allow adding user information to a table, integrate a map, and provide a text editor.
 
 ### Language Switching
+
+
 The project supports both Arabic and English. You can toggle the language from the navbar. The language will persist across page reloads using `next-intl`.
 
 ### Redux Integration
@@ -78,7 +80,7 @@ We welcome contributions to this project. If you'd like to improve or add new fe
 
 ![Screenshot 2025-01-12 220009](https://github.com/user-attachments/assets/53e17774-be6b-40f7-b3be-e85b1543ec4e)
 ![Screenshot 2025-01-12 215954](https://github.com/user-attachments/assets/e289cbb6-7f8a-461e-9419-0f1d473a190c)
-![Screenshot 2025-01-10 183859](https://github.com/user-attachments/assets/f7b56a39-c020-4db8-9e7b-75fbd499150f)
+
 
 
 
