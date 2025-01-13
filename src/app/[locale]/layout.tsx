@@ -3,6 +3,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+
+import "../globals.css";
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>; // Change this to a Promise
