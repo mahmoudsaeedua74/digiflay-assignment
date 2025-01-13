@@ -1,5 +1,5 @@
 import ReduxProvider from "@/components/ReduxProvider/ReduxProvider";
-import { NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider, } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description: "Description",
 };
 export default async function LocaleLayout({
+  
   children,
   params,
 }: LocaleLayoutProps) {
@@ -22,8 +23,10 @@ export default async function LocaleLayout({
   if (!messages) {
     notFound();
   }
+  const direction = locale === "ar" || locale === "he" ? "rtl" : "ltr";
+
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={direction}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ReduxProvider>{children}</ReduxProvider>
