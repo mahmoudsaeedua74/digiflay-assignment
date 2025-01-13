@@ -1,8 +1,9 @@
 import React from "react";
 import PartDescription from "../PartDescription/PartDescription";
+import { useTranslations } from "next-intl";
 import Form from "../Form/Form";
 import ResultsTable from "../ResultsTable/ResultsTable";
-import { useTranslations } from "next-intl";
+
 export default function FormLayout() {
   const t = useTranslations("Part");
   return (

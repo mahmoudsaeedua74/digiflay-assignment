@@ -2,7 +2,6 @@
 import { useAppSelector } from "@/hooks/store.hooks";
 import { useTranslations } from "next-intl";
 import React from "react";
-
 export default function ResultsTable() {
   const users = useAppSelector((store) => store.formSlice.users);
   const t = useTranslations("Form");
@@ -21,19 +20,19 @@ export default function ResultsTable() {
               <th className="tableHead">{t("email")}</th>
             </tr>
           </thead>
-          {users.map((user) => (
+            {users.map((user) => (
             <tbody
               className="text-[#1A1A1A] t font-medium bg-[#F2F2F2]  "
               key={user.id}
             >
               <tr className="bg-white border-b ">
-                <td className="tableBody">{user.FirstName}</td>
-                <td className="tableBody">{user.LastName}</td>
-                <td className="tableBody">{user.Phone}</td>
-                <td className="tableBody">{user.Email}</td>
+              <td className="tableBody">{user.FirstName}</td>
+              <td className="tableBody">{user.LastName}</td>
+              <td className="tableBody">{user.Phone}</td>
+              <td className="tableBody">{user.Email}</td>
               </tr>
             </tbody>
-          ))}
+            ))}
         </table>
       </div>
     </div>

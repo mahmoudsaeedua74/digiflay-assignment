@@ -3,10 +3,11 @@ import React, {  } from "react";
 import Button from "../Button/Button";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { FormValues } from "@/types/formik.type";
-import { userInfo } from "@/store/features/formSlice";
 import { useRootDispatch } from "@/hooks/store.hooks";
 import { useTranslations } from "next-intl";
+import { FormValues } from "@/types/formik.type";
+import { userInfo } from "@/store/features/formSlice";
+
 
 export default function Form() {
   const dispatch = useRootDispatch();

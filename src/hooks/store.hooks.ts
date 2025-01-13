@@ -1,5 +1,5 @@
-import { RootDispatch, RootState } from "@/store/store";
 import { useDispatch, useSelector } from "react-redux";
+import { RootDispatch, RootState } from "../store/store";
 export const useAppSelector = useSelector.withTypes<RootState>();
 export const useRootDispatch = useDispatch.withTypes<RootDispatch>();
 /*i make a custom hooks for Redux with TypeScript to avoid repetitive typing:

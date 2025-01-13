@@ -1,7 +1,6 @@
-import React from "react";
+import { useTranslations } from "next-intl";
 import PartDescription from "../PartDescription/PartDescription";
 import Map from "../Map/Map";
-import { useTranslations } from "next-intl";
 
 export default function MapViewer() {
   const t = useTranslations("Part");
